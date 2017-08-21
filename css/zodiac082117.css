@@ -1,0 +1,116 @@
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+#container {
+	background-color: maroon;
+    color: #FFF;
+    font-family: sans-serif;
+	width: 95%;
+	height: 575px;
+	border: 10px solid beige;
+	border-radius: 20px;
+    padding: 25px;
+}
+
+#bigPic {
+	width: 60%;
+	background-color: #FFF;
+    color: #555;
+	width: 35%;
+	height: 375px;
+	float: right;
+	border-radius: 10px;
+	border: 3px solid #AAA;
+	padding: 25px;
+	text-align: center;
+	font-size: 2rem;
+	font-family: Roboto, sans-serif;
+    margin-left: 5px;
+}
+
+#bigPic img {
+	width: 80%;
+	height: auto;
+	background-color: #FFF;
+}
+
+#thumbnails {
+	width: 53%;
+	background-color: #888;
+	background-size: 450px;
+	height: 375px;
+	float: left;
+	border-radius: 10px;
+	border: 3px solid #AAA;
+	padding: 25px;
+	background-image: url(../images/janice-w-bunny-600x261.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#thumbnails img {
+	width: 70px;
+	height: 70px;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 7px;
+	box-shadow: 5px 5px 5px #555;
+    cursor: pointer;
+}
+
+/* CSS for the absolute position div that holds a Chinese character image */
+#char {
+	position: absolute;
+	background-color: white;
+	height: 100px;
+	left: 206px;
+	top: 475px;
+}
+
+#char img {
+	box-shadow: none;
+	height: 100px;
+	width: 145px;
+}
+
+/* CSS for the absolute position div that holds the score */
+#score {
+	position: absolute;
+	background-color: white;
+	height: 90px;
+    width: 160px;
+	left: 1050px;
+	top: 35px;
+    background-color: darkorchid;
+    color: beige;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 10px;
+    border-radius: 15px;
+    border: 3px solid bisque;
+    display: none; /* hide the score box div on page load */
+}
+
+#btns button {
+    font-size: 0.9rem;
+    padding: 4px;
+    width: 150px;
+    color: white;
+    background-color: purple;
+    border-radius: 10px;
+    float: left;
+    margin-right: 30px;
+    margin-top: 6px;
+}
+
+ 
+
+
+
