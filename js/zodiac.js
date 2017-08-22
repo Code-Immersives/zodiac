@@ -12,7 +12,6 @@ var myObjArr = [
 	{eng: 'snake', chi: 'she', pin: 'she&#769;' },
 	{eng: 'tiger', chi: 'hu', pin: 'la&#780;ohu&#780;' }
 ]
-var monkey = 'monkey'
 // Global Vars
 var thumbsDiv = document.getElementById('thumbnails') // div that holds thumb images
 var charDiv = document.getElementById('char') // div that holds thumb images
