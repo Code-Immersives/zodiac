@@ -62,14 +62,18 @@ class Zodiac {
     console.log('taking quiz', clickedAnimal, this.randomAnimal)
     if (this.randomAnimal.eng == clickedAnimal.eng) {
       console.log('correct answer')
+      this.rawScore++
+      this.displayScore()
+      this.animals = this.animals.filter((a, i) => {
+        return a != this.randomAnimal
+      })
+      this.startQuiz()
     } else {
       console.log('wrong answer')
       this.sound.play()
       this.bigPicDiv.innerHTML = 'Wrong answer, please select another thumb pic.'
       this.bigPicDiv.innerHTML += `<br> <br> <h1>${this.randomAnimal.pin}</h1>`
-      this.avgScore = this.rawScore / this.clicks
-      let scoreReport = 'Total Clicks: ' + this.clicks + '<br>' + 'Raw Score: ' + this.rawScore + '<br>' + 'Avg Score: ' + this.avgScore.toFixed(3)
-      this.scoreBox.innerHTML = scoreReport
+      this.displayScore()
     }
   }
   startQuiz () {
@@ -90,6 +94,11 @@ class Zodiac {
     let charPic = '<img src="images/char-' + animal.chi + '.jpg" width="65%" height="auto">'
     this.charDiv.innerHTML = charPic
     this.charDiv.style.display = 'block'
+  }
+  displayScore () {
+    this.avgScore = this.rawScore / this.clicks
+    let scoreReport = 'Total Clicks: ' + this.clicks + '<br>' + 'Raw Score: ' + this.rawScore + '<br>' + 'Avg Score: ' + this.avgScore.toFixed(3)
+    this.scoreBox.innerHTML = scoreReport
   }
 
 }
