@@ -25,6 +25,9 @@ class Zodiac {
     this.quizMode = false
     this.quizButton.addEventListener('click', this.startQuiz.bind(this))
     this.randomAnimal = {}
+    this.clicks = 0
+    this.rawScore = 0
+    this.avgScore = 0
   }
   // function(){}
   // () => {}
@@ -55,11 +58,18 @@ class Zodiac {
   }
   takeQuiz (event) {
     let clickedAnimal = event.target
+    this.clicks++
     console.log('taking quiz', clickedAnimal, this.randomAnimal)
     if (this.randomAnimal.eng == clickedAnimal.eng) {
       console.log('correct answer')
     } else {
       console.log('wrong answer')
+      this.sound.play()
+      this.bigPicDiv.innerHTML = 'Wrong answer, please select another thumb pic.'
+      this.bigPicDiv.innerHTML += `<br> <br> <h1>${this.randomAnimal.pin}</h1>`
+      this.avgScore = this.rawScore / this.clicks
+      let scoreReport = 'Total Clicks: ' + this.clicks + '<br>' + 'Raw Score: ' + this.rawScore + '<br>' + 'Avg Score: ' + this.avgScore.toFixed(3)
+      this.scoreBox.innerHTML = scoreReport
     }
   }
   startQuiz () {
@@ -74,6 +84,7 @@ class Zodiac {
     this.sound.play()
     this.displayChar(this.randomAnimal)
     this.bigPicDiv.innerHTML = 'What animal name did I say in Chinese?<br>Click the correct thumb pic!'
+    this.bigPicDiv.innerHTML += `<br> <br> <h1>${this.randomAnimal.pin}</h1>`
   }
   displayChar (animal) {
     let charPic = '<img src="images/char-' + animal.chi + '.jpg" width="65%" height="auto">'
